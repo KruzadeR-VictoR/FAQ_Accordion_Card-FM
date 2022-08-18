@@ -1,0 +1,210 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+body {
+  background: -webkit-gradient(linear, left top, left bottom, from(#af67e9), to(#6565e7));
+  background: linear-gradient(to bottom, #af67e9, #6565e7);
+}
+
+main {
+  min-height: 100vh;
+  min-width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1rem 1.5rem;
+  background: -webkit-gradient(linear, left top, left bottom, from(#af67e9), to(#6565e7));
+  background: linear-gradient(to bottom, #af67e9, #6565e7);
+}
+
+.Accordion {
+  position: relative;
+  width: 100%;
+  max-width: 50rem;
+}
+
+.Accordion::after {
+  display: none;
+}
+
+@media screen and (min-width: 900px) {
+  .Accordion::after {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 11.4rem;
+    left: -7rem;
+    background-image: url(../images/illustration-box-desktop.svg);
+    background-repeat: no-repeat;
+    height: 11rem;
+    width: 11rem;
+    background-size: contain;
+    z-index: 14;
+  }
+}
+
+.FAQ-card {
+  width: 100%;
+  max-width: 50rem;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  border-radius: 20px;
+  padding: 7em 0 2rem;
+  margin-top: 8rem;
+  background-color: white;
+}
+
+@media screen and (min-width: 900px) {
+  .FAQ-card {
+    padding: 3rem;
+    overflow: hidden;
+    margin: 0;
+  }
+}
+
+.FAQ-card::before {
+  content: "";
+  position: absolute;
+  top: -6.625rem;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  background: url(../images/illustration-woman-online-mobile.svg), url(../images/bg-pattern-mobile.svg);
+  background-position: center top, center 6.7rem;
+  background-repeat: no-repeat;
+  width: 15rem;
+  height: 13.375rem;
+  z-index: 10;
+}
+
+@media screen and (min-width: 900px) {
+  .FAQ-card::before {
+    background: url(../images/illustration-woman-online-desktop.svg), url(../images/bg-pattern-desktop.svg);
+    background-repeat: no-repeat;
+    background-position: center left, -15rem -8rem;
+    background-size: 65%, 100%;
+    left: -4.5rem;
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
+    height: 100%;
+    width: 80%;
+  }
+}
+
+.FAQ-card .Question-container {
+  padding: 1.5rem;
+}
+
+@media screen and (min-width: 900px) {
+  .FAQ-card .Question-container {
+    width: 50%;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+  }
+}
+
+.FAQ-card .Question-container .heading {
+  text-align: center;
+  color: #1d1e35;
+}
+
+@media screen and (min-width: 900px) {
+  .FAQ-card .Question-container .heading {
+    text-align: left;
+  }
+}
+
+.FAQ-card .Question-container .questions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  margin-top: 1rem;
+}
+
+.FAQ-card .Question-container .questions .question {
+  cursor: pointer;
+  border-bottom: 1px solid #e7e7e9;
+  padding: 1rem 0;
+}
+
+.FAQ-card .Question-container .questions .question .question-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.FAQ-card .Question-container .questions .question .question-inner h2 {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: #1d1e35;
+}
+
+.FAQ-card .Question-container .questions .question .question-inner .arrow {
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.FAQ-card .Question-container .questions .question .answer {
+  position: relative;
+  font-size: 0.7rem;
+  padding: 0.7rem 0 0;
+  line-height: 1.5em;
+  color: #787887 !important;
+  display: none;
+  overflow: hidden;
+  -webkit-transition: top 1s ease-in-out;
+  transition: top 1s ease-in-out;
+}
+
+.FAQ-card .Question-container .questions .question:hover h2 {
+  color: #f47c57;
+}
+
+.clicked-arrow {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.clicked .answer {
+  color: #168a5d !important;
+  display: block !important;
+  top: 0 !important;
+}
+
+.clicked h2 {
+  font-weight: 700 !important;
+  color: #4a4b5e !important;
+}
+/*# sourceMappingURL=style.css.map */
